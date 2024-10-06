@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://80w7px224c5r"]
+
+[ext_resource type="Script" path="res://little_sprite.gd" id="1_rgx34"]
+
+[node name="LittleSprite" type="Node2D"]
+script = ExtResource("1_rgx34")

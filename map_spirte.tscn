@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr452pnmb5ho2"]
+
+[ext_resource type="Script" path="res://map_spirte.gd" id="1_hux6p"]
+[ext_resource type="Texture2D" uid="uid://wfrhuxqmqw4i" path="res://assets/LittleSprite.png" id="2_rem3i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0karv"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ilwpa"]
+radius = 624.135
+
+[node name="map_spirte" type="PathFollow2D"]
+script = ExtResource("1_hux6p")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_0karv")
+
+[node name="Area2D2" type="Area2D" parent="."]
+visible = false
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("CircleShape2D_ilwpa")
+debug_color = Color(0.657131, 0.512924, 0.16028, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.34375, 0.347656)
+texture = ExtResource("2_rem3i")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]

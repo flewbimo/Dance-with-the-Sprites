@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cemqp7qaemf7k"]
+
+[ext_resource type="Texture2D" uid="uid://wfrhuxqmqw4i" path="res://assets/LittleSprite.png" id="2_mlipt"]
+[ext_resource type="Texture2D" uid="uid://dv1f7rlbfvq77" path="res://assets/light.png" id="3_6yryb"]
+
+[node name="LittleSprite" type="Node2D"]
+
+[node name="LittleSprite" type="Sprite2D" parent="."]
+position = Vector2(0.25, -0.25)
+scale = Vector2(1.02, 0.98)
+texture = ExtResource("2_mlipt")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1.5, 0.499999)
+scale = Vector2(7.22656, 5.66406)
+energy = 16.0
+blend_mode = 2
+texture = ExtResource("3_6yryb")
